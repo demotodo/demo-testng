@@ -7,35 +7,64 @@ import org.testng.annotations.*;
  */
 public class FirstTry {
 
-    @BeforeClass
-    public void init() {
-        System.out.println("before class");
+    @BeforeSuite
+    public void beforeSuite() {
+        System.out.println("FirstTry.beforeSuite");
     }
 
+    @BeforeGroups("group1")
+    public void beforeGroups() {
+        System.out.println("FirstTry.beforeGroups");
+    }
+
+    @BeforeTest
+    public void beforeTest() {
+        System.out.println("FirstTry.beforeTest");
+    }
+
+    @BeforeClass
+    public void beforeClass() {
+        System.out.println("FirstTry.beforeClass");
+    }
 
     @BeforeMethod
-    public void beforeM() {
-        System.out.println("before method");
+    public void beforeMethod() {
+        System.out.println("FirstTry.beforeMethod");
     }
 
-    @Test
+    @Test(groups = "group1")
     public void test1() {
-        System.out.println("test 1");
+        System.out.println("FirstTry.test1");
     }
 
-    @Test
+    @Test(groups = "group2")
     public void test2() {
-        System.out.println("test 2");
+        System.out.println("FirstTry.test2");
     }
 
     @AfterMethod
-    public void afterM() {
-        System.out.println("after method");
+    public void afterMethod() {
+        System.out.println("FirstTry.afterMethod");
     }
 
     @AfterClass
-    public void destroy() {
-        System.out.println("after class");
+    public void afterClass() {
+        System.out.println("FirstTry.afterClass");
+    }
+
+    @AfterTest
+    public void afterTest() {
+        System.out.println("FirstTry.afterTest");
+    }
+
+    @AfterGroups
+    public void afterGroups() {
+        System.out.println("FirstTry.afterGroups");
+    }
+
+    @AfterSuite
+    public void afterSuite() {
+        System.out.println("FirstTry.afterSuite");
     }
 
 }
