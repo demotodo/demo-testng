@@ -3,4 +3,7 @@ set CLASSPATH=%CLASSPATH%;C:\Users\bribin.zheng\.gradle\caches\modules-2\files-2
 
 rmdir /s /q test-output
 
-java -ea org.testng.TestNG ../src/test/resources/testng.xml
+java org.testng.TestNG @run-testng-group1-3.txt
+
+
+rem FIXME why it's not working, as stated on http://testng.org/doc/documentation-main.html#running-testng

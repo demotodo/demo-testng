@@ -3,4 +3,5 @@ set CLASSPATH=%CLASSPATH%;C:\Users\bribin.zheng\.gradle\caches\modules-2\files-2
 
 rmdir /s /q test-output
 
-java -ea org.testng.TestNG ../src/test/resources/testng.xml
+rem java -ea org.testng.TestNG -testclass com.demotodo.example.testng.FirstTry -groups group1
+java -ea org.testng.TestNG -suitename SuiteFromCLI -testname TestFromCLI -testclass com.demotodo.example.testng.FirstTry -groups group1

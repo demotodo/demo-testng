@@ -1,0 +1,1 @@
+-suitename SuiteFromCLI -testname TestFromCLI -testclass com.demotodo.example.testng.FirstTry -groups group1

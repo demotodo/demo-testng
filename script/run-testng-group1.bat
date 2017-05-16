@@ -3,4 +3,16 @@ set CLASSPATH=%CLASSPATH%;C:\Users\bribin.zheng\.gradle\caches\modules-2\files-2
 
 rmdir /s /q test-output
 
-java -ea org.testng.TestNG ../src/test/resources/testng.xml
+java -ea org.testng.TestNG ../src/test/resources/testng-group1.xml
+
+
+rem #############################################
+rem
+rem TODO why the following snippet is not working ?
+rem
+rem     @BeforeGroups("group1")
+rem     public void beforeGroups() {
+rem         System.out.println("FirstTry.beforeGroups-group1");
+rem     }
+rem
+rem #############################################
