@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
+
+    <groups>
+        <run>
+            <include name="windows.*"/>
+        </run>
+    </groups>
+
+    <test name="test-group">
+        <classes>
+            <class name="com.demotodo.example.testng.GroupTest"/>
+        </classes>
+    </test>
+
+</suite>

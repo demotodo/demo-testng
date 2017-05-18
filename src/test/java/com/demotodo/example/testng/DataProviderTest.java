@@ -23,7 +23,7 @@ public class DataProviderTest {
 
     @Test(dataProvider = "create", dataProviderClass = StaticProvider.class)
     public void verifyData2(Integer n) {
-        System.out.println(n);
+        System.out.println("DataProviderTest.verifyData2: " + n);
     }
 
 }

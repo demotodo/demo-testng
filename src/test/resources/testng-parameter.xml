@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
+
+    <parameter name="first-name" value="Cedric"/>
+    <parameter name="last-name" value="Last"/>
+
+    <test name="test-parameter" parallel="classes" thread-count="10">
+        <classes>
+            <class name="com.demotodo.example.testng.ParameterTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -38,9 +38,9 @@ public class FirstTry {
         System.out.println("FirstTry.beforeMethod");
     }
 
-    @Test(groups = "group1")
+    @Test(groups = {"group1", "group3"})
     public void test1() {
-        System.out.println("FirstTry.test1-group1");
+        System.out.println("FirstTry.test1-group1-group3");
     }
 
     @Test(groups = "group2")

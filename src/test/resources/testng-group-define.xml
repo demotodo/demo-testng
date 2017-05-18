@@ -1,0 +1,27 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
+
+    <test name="test-group">
+        <groups>
+            <define name="functest">
+                <include name=".*functest"/>
+            </define>
+
+            <define name="all">
+                <include name="functest"/>
+                <include name=".*checkintest"/>
+            </define>
+
+            <run>
+                <include name="all"/>
+                <!--<include name="functest"/>-->
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.demotodo.example.testng.GroupTest"/>
+        </classes>
+    </test>
+
+</suite>

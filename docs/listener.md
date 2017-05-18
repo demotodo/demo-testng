@@ -69,6 +69,31 @@ public class MyTest {
 ```
 
 
+## default listener
+
+```
+  private void initializeDefaultListeners() {
+    m_testListeners.put(ExitCodeListener.class, new ExitCodeListener(this));
+
+    if (m_useDefaultListeners) {
+      addReporter(SuiteHTMLReporter.class);
+      addReporter(Main.class);
+      addReporter(FailedReporter.class);
+      addReporter(XMLReporter.class);
+      if (System.getProperty("oldTestngEmailableReporter") != null) {
+        addReporter(EmailableReporter.class);
+      } else if (System.getProperty("noEmailableReporter") == null) {
+        addReporter(EmailableReporter2.class);
+      }
+      addReporter(JUnitReportReporter.class);
+      if (m_verbose != null && m_verbose > 4) {
+        addListener(new VerboseReporter("[TestNG] "));
+      }
+    }
+  }
+```
+
+
 ## ServiceLoader
 
 Finally, the JDK offers a very elegant mechanism to specify implementations of interfaces on the class path via the `ServiceLoader` class.

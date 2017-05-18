@@ -1,5 +1,7 @@
 # Run TestNG
 
+## org.testng.TestNG
+
 ```bash
 java org.testng.TestNG testng1.xml [testng2.xml testng3.xml ...]
 ```
@@ -23,6 +25,44 @@ C:> java org.testng.TestNG @c:\command.txt
 java org.testng.TestNG -groups windows,linux -testclass org.test.MyTest
 
 java -Dtestng.test.classpath="c:/build;c:/java/classes;" org.testng.TestNG testng.xml
+```
+
+### org.testng.TestNG#run
+
+```
+  public void run() {
+    initializeSuitesAndJarFile();
+    initializeConfiguration();
+    initializeDefaultListeners();
+    initializeCommandLineSuites();
+    initializeCommandLineSuitesParams();
+    initializeCommandLineSuitesGroups();
+
+    sanityCheck();
+
+    runExecutionListeners(true /* start */);
+
+    runSuiteAlterationListeners();
+
+    m_start = System.currentTimeMillis();
+    List<ISuite> suiteRunners = runSuites();
+
+    m_end = System.currentTimeMillis();
+
+    if(null != suiteRunners) {
+      generateReports(suiteRunners);
+    }
+
+    runExecutionListeners(false /* finish */);
+
+    if(!m_hasTests) {
+      setStatus(HAS_NO_TEST);
+      if (TestRunner.getVerbose() > 1) {
+        System.err.println("[TestNG] No tests found. Nothing was run");
+        usage();
+      }
+    }
+  }
 ```
 
 

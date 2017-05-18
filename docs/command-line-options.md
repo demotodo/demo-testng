@@ -87,3 +87,19 @@ java -Dtestng.test.classpath="c:/build;c:/java/classes;" org.testng.TestNG testn
 ```
 
 `testng.test.classpath` is the only system property that TestNG understands.
+
+
+## default name
+
+```
+  /** The default name for a suite launched from the command line */
+  public static final String DEFAULT_COMMAND_LINE_SUITE_NAME = "Command line suite";
+
+  /** The default name for a test launched from the command line */
+  public static final String DEFAULT_COMMAND_LINE_TEST_NAME = "Command line test";
+
+
+    //no two tests in the same suite should have the same name.
+    //so, make the default test name unique
+    m_name = TestNG.DEFAULT_COMMAND_LINE_TEST_NAME + " " + UUID.randomUUID().toString();
+```
