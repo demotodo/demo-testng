@@ -107,46 +107,6 @@ public class MyTest {
 ```
 
 
-### support injection
-
-- TestNG will use the test context for the injection.
-
-- The Data Provider method can return one of the following two types:
-    - An array of array of objects (`Object[][]`) where 
-        - the first dimension's size is the number of times the test method will be invoked 
-        - and the second dimension size contains an array of objects that must be compatible with the parameter types of the test method.
-    - An `Iterator<Object[]>`.
-        - The only difference with Object[][] is that an Iterator lets you create your test data lazily.
-        - TestNG will invoke the iterator and then the test method with the parameters returned by this iterator one by one.
-
-- If you declare your @DataProvider as taking a `java.lang.reflect.Method` as first parameter, 
-    - TestNG will pass the current test method for this first parameter. 
-
-
-```
-@DataProvider(name = "test1")
-public Iterator<Object[]> createData() {
-  return new MyIterator(DATA);
-}
-```
-
-```
-@DataProvider(name = "dp")
-public Object[][] createData(Method m) {
-  System.out.println(m.getName());  // print test method name
-  return new Object[][] { new Object[] { "Cedric" }};
-}
- 
-@Test(dataProvider = "dp")
-public void test1(String s) {
-}
- 
-@Test(dataProvider = "dp")
-public void test2(String s) {
-}
-```
-
-
 ### parallel
 
 - Data providers can run in parallel with the attribute parallel: `@DataProvider(parallel = true)`

@@ -2,6 +2,9 @@
 
 <suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
 
+    <parameter name="first-name" value="Cedric"/>
+    <parameter name="last-name" value="Last"/>
+
     <test name="first-package" parallel="classes" thread-count="10">
         <packages>
             <package name="com.demotodo.example.testng.*"/>

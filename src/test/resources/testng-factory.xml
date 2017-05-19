@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
+
+    <test name="test-factory" group-by-instances="true">
+        <classes>
+            <class name="com.demotodo.example.testng.FactoryTest"/>
+        </classes>
+    </test>
+
+</suite>

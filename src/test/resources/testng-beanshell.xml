@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG" verbose="1" thread-count="4" data-provider-thread-count="4">
+
+    <test name="test-beanshell" parallel="classes" thread-count="10">
+        <method-selectors>
+            <method-selector>
+                <script language="beanshell"> <![CDATA[
+                    groups.containsKey("group1");
+                ]]></script>
+            </method-selector>
+        </method-selectors>
+
+        <classes>
+            <class name="com.demotodo.example.testng.FirstTry"/>
+        </classes>
+    </test>
+
+</suite>
